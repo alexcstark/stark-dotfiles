@@ -1,0 +1,255 @@
+extends:
+  - eslint:recommended
+  - "./.eslintrc.base.yml"
+
+plugins:
+  - react
+  - import
+  - lodash
+  - flowtype
+  - flexport
+
+
+rules:
+  # BUILT-IN RULES
+  ################
+
+  ## Deliberately enabled rules
+  array-bracket-spacing: error
+  arrow-spacing: error
+  block-scoped-var: error
+  comma-dangle: [error, always-multiline]
+  comma-spacing: error
+  comma-style: [error, last]
+  computed-property-spacing: error
+  curly: [error, all]
+  eol-last: error
+  eqeqeq: [error, smart]
+  guard-for-in: error
+  indent:
+    - error
+    - 2
+    -
+      SwitchCase: 1
+      VariableDeclarator:
+        var: 2
+        let: 2
+        const: 3
+  keyword-spacing: error
+  linebreak-style: error
+  max-statements-per-line: error
+  new-cap: error
+  new-parens: error
+  no-bitwise: error
+  no-caller: error
+  no-cond-assign: [error, except-parens]
+  no-const-assign: error
+  no-constant-condition: error
+  no-debugger: error
+  no-empty-pattern: error
+  no-empty: error
+  no-eval: error
+  no-extend-native: error
+  no-extra-semi: error
+  no-irregular-whitespace: error
+  no-iterator: error
+  no-mixed-spaces-and-tabs: error
+  no-multi-spaces: error
+  no-multi-str: error
+  no-multiple-empty-lines: [error, {max: 2}]
+  no-new: error
+  no-octal: error
+  no-proto: error
+  no-redeclare: [error, {builtinGlobals: true}]
+  no-script-url: error
+  no-sequences: error
+  no-spaced-func: error
+  no-trailing-spaces: error
+  no-undef: error
+  no-unused-vars: [error, {"args": "none", "varsIgnorePattern": "ignored"}]
+  no-useless-escape: error
+  no-useless-rename: error
+  no-var: error
+  no-whitespace-before-property: error
+  no-with: error
+  object-curly-spacing: error
+  padded-blocks: [error, never]
+  quotes: [error, single, { "avoidEscape": true }]
+  rest-spread-spacing: [error, never]
+  semi-spacing: error
+  semi: error
+  space-before-blocks: error
+  space-before-function-paren: [error, never]
+  space-in-parens: error
+  space-infix-ops: error
+  space-unary-ops: error
+  spaced-comment: error
+  strict: [error, global]
+  template-curly-spacing: error
+  valid-typeof: error
+  wrap-iife: [error, inside]
+  array-callback-return: [error]
+  radix: error
+  no-throw-literal: error
+
+
+  ## Warnings that we'd eventually like to promote to errors
+  camelcase: [warn, {properties: never}]
+  dot-notation: warn
+  func-style: [warn, 'declaration', {"allowArrowFunctions": true}]
+  no-magic-numbers:
+    - warn
+    -
+      enforceConst: true
+      ignore:
+        - -1   # e.g. indexOf(...) !== -1
+        - 0
+        - 0.5  # e.g. Math.random() < 0.5
+        - 1
+        - 2    # e.g. n % 2 === 0. TODO(dmnd): Replace is isEven function?
+        - 100
+        - 360
+        - 180
+        - 2017
+  one-var: [warn, never]
+
+
+  ## Deliberately disabled rules with justifications
+  # We use impor/no-duplicates instead because it works better with flow
+  no-duplicate-imports: off
+
+  # We often use parens to make precedence clearer.
+  no-extra-parens: off
+
+  # Too many false positives to be valuable
+  no-loop-func: off
+
+  # We haven't found any confusing use of this operator yet.
+  no-plusplus: off
+
+  # Shadowing isn't a very difficult concept.
+  no-shadow: off
+
+
+  ## Rules disabled due to violations that nobody has thought about
+  no-extra-boolean-cast: off
+
+
+  # REACT PLUGIN RULES
+  ####################
+
+  ## Deliberately enabled rules
+  react/display-name: error
+  react/jsx-boolean-value: [error, always]
+  react/jsx-closing-bracket-location: error
+  react/jsx-curly-spacing: error
+  react/jsx-equals-spacing: error
+  react/jsx-no-comment-textnodes: error
+  react/jsx-no-duplicate-props: error
+  react/jsx-no-target-blank: error
+  react/jsx-no-undef: error
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+  react/jsx-wrap-multilines: error
+  react/no-children-prop: error
+  react/no-danger-with-children: error
+  react/no-deprecated: error
+  react/no-did-update-set-state: error
+  react/no-direct-mutation-state: error
+  react/no-is-mounted: error
+  react/no-render-return-value: error
+  react/no-unknown-property: error
+  react/prop-types: error
+  react/react-in-jsx-scope: error
+  react/require-render-return: error
+  react/self-closing-comp: error
+  react/style-prop-object: error
+
+
+  ## Warnings that we'd eventually like to promote to errors
+  react/jsx-handler-names: warn
+  react/jsx-no-bind: warn
+  react/no-danger: warn
+  react/no-did-mount-set-state: warn
+  react/no-find-dom-node: warn
+  react/no-unescaped-entities: warn
+  react/prefer-es6-class: warn
+
+
+  ## Deliberately disabled rules with justifications
+  # This doesn't seem valuable for us at all.
+  react/jsx-no-literals: off
+
+  # A better version of this rule would be "export at most one component per
+  # file". Unfortunately as is this rules bans private components.
+  react/no-multi-comp: off
+
+  # We definitely use component state.
+  react/no-set-state: off
+
+  # This rule has false positives with destructuring, so it's disabled until
+  # that gets fixed.
+  # https://github.com/yannickcr/eslint-plugin-react/issues/296
+  react/no-unused-prop-types: [off, skipShapeProps: true]
+
+  ## Rules disabled due to violations that nobody has thought about
+  react/forbid-prop-types: off
+  react/jsx-indent-props: off
+  react/jsx-max-props-per-line: off
+  react/jsx-sort-prop-types: off
+  react/jsx-sort-props: off
+  react/sort-comp: off
+
+
+  # IMPORT PLUGIN RULES
+  #####################
+  import/default: error
+  import/no-duplicates: error
+  import/export: error
+  import/extensions: error
+  import/named: error
+  import/namespace: error
+  import/no-named-as-default-member: error
+  import/no-named-as-default: error
+  import/no-unresolved: error
+
+
+  # LODASH PLUGIN RULES
+  #####################
+  lodash/callback-binding: error
+  lodash/no-extra-args: error
+  lodash/unwrap: error
+
+  # FLOWTYPE PLUGIN RULES
+  ###################
+  flowtype/boolean-style: [error, boolean]
+  flowtype/define-flow-type: error
+  flowtype/delimiter-dangle: [error, always-multiline]
+  flowtype/generic-spacing: [error, never]
+  flowtype/no-dupe-keys: error
+  flowtype/no-weak-types: [error, any: false, Object: true, Function: true]
+  flowtype/object-type-delimiter: [error, comma]
+  flowtype/require-parameter-type: [error, excludeArrowFunctions: true, excludeParameterMatch: ^_]
+  flowtype/require-valid-file-annotation: [error, always, annotationStyle: line]
+  flowtype/semi: [error, always]
+  flowtype/space-after-type-colon: [error, always]
+  flowtype/space-before-type-colon: [error, never]
+  flowtype/space-before-generic-bracket: [error, never]
+  flowtype/type-id-match: [error, "^\\$?([A-Z][a-z0-9]*)+"]
+  flowtype/union-intersection-spacing: [error, always]
+  flowtype/use-flow-type: [error]
+
+  # rules disabled for now due to amount of work needed
+  flowtype/require-return-type: off
+
+  # rules disabled because there's no good reason to enable
+  flowtype/sort-keys: off
+
+  flexport/no-full-lib-imports: [warn]
+  flexport/no-disabled-anchors: [error]
+  flexport/no-buttons-without-type: [error]
+  flexport/no-href-on-buttons: [error]
+  flexport/no-ugly-buttons: [error]
+  flexport/no-dollar-sign-react-types: [error]
+  flexport/no-setState-in-constructor: [error]
+  flexport/no-componentDidMount-leaks: [error]

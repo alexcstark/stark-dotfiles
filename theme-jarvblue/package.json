@@ -1,0 +1,22 @@
+{
+    "name": "theme-jarvblue",
+    "displayName": "JarvBlue",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "Alex",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "JarvBlue",
+                "uiTheme": "vs-dark",
+                "path": "./themes/JarvBlue (5).tmTheme"
+            }
+        ]
+    }
+}
