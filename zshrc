@@ -37,7 +37,7 @@ source $DF/paths.zsh
 unsetopt correct_all
 
 # autoenv
-source /usr/local/opt/autoenv/activate.sh
+# source /usr/local/opt/autoenv/activate.sh
 
 # custom commands
 source $DF/commands/commands.zsh
@@ -75,7 +75,7 @@ stty icrnl;
 # Preserve Insert Cursor shape in nvim using iterm
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-ssh-add ~/.ssh/id_rsa
+# ssh-add ~/.ssh/id_rsa
 
 
 export PATH="$HOME/.yarn/bin:$PATH"

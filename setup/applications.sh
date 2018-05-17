@@ -37,16 +37,8 @@ pip3 install neovim
 
 brew install chrome-cli
 brew install git
-brew install rvm
-brew install ruby-build
-brew install imagemagick
-brew install heroku
-
-brew install postgresql
-brew services start postgresql
 
 brew tap caskroom/cask
-brew cask install mongodb
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install skype
@@ -57,21 +49,7 @@ brew cask install slack
 brew cask install spotify
 brew cask install kindle
 
-fancy_echo "Setting up Node with NVM"
-mkdir ~/.nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-source ~/dotfiles/setup/shell.sh
-nvm install node
-nvm alias default node
-
-fancy_echo "Installing global npm packages"
-npm install -g npm@latest
-npm install -g npm-check-updates browser-sync
-npm i -g js-beautify
-npm i -g eslint
-npm i -g webpack
+# install node?
 
 fancy_echo "Installing Yarn"
 brew install yarn

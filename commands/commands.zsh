@@ -155,10 +155,6 @@ function gpum {
   git pull upstream master --rebase;
 }
 
-function gpom {
-  confirm && git push origin master;
-}
-
 function gpogig {
   confirm && git push origin master & git push --mirror bitbucket;
 }
