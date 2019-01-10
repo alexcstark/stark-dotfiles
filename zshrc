@@ -79,3 +79,4 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 
 export PATH="$HOME/.yarn/bin:$PATH"
+source ~/.rvm/scripts/rvm

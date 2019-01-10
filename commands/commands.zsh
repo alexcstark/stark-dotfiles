@@ -1,7 +1,6 @@
 function cd {
  builtin cd "$@";
  ls -a;
- autoenv_init;
 }
 
 function rc {
@@ -28,6 +27,10 @@ function dkc_restart {
   dkrm;
   dkrmi;
   dkc up;
+}
+
+function gcan! {
+  git commit -v -a --no-edit --amend
 }
 
 function kill_port {

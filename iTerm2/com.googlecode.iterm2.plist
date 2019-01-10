@@ -1354,7 +1354,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iTerm2/schemes</string>
+	<string>/Applications</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{868, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -1402,13 +1402,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>483 231 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>344 430 796 473 0 0 2560 1417 </string>
+	<string>1496 599 918 512 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>1539 1953 592 584 1440 0 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1283 7 1258 1410 0 0 2560 1417 </string>
+	<string>1709 23 849 1394 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 543 745 827 0 0 2560 1417 </string>
+	<string>1319 -276 1273 1417 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_B219262B-5E85-416E-9082-A99B58F906B3</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B219262B-5E85-416E-9082-A99B58F906B3_selection</key>
@@ -2252,6 +2252,8 @@
 	</array>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>1</integer>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -2318,7 +2320,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-08T18:46:44Z</date>
+	<date>2018-12-06T02:05:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -2340,7 +2342,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.2.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
