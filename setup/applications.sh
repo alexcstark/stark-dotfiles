@@ -25,7 +25,6 @@ fancy_echo "Installing CLI tools"
 brew install openssl
 brew install zsh
 brew install zsh-completions
-brew install the_silver_searcher
 brew install wget
 
 fancy_echo "Installing python and setting up Neovim"
@@ -41,16 +40,9 @@ brew install git
 brew tap caskroom/cask
 brew cask install google-chrome
 brew cask install iterm2
-brew cask install skype
 brew cask install postman
 
 fancy_echo "Installing Misc Apps"
 brew cask install slack
 brew cask install spotify
 brew cask install kindle
-
-# install node?
-
-fancy_echo "Installing Yarn"
-brew install yarn
-export PATH="$PATH:`yarn global bin`"
