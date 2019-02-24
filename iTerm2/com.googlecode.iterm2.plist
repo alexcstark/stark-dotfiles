@@ -1406,7 +1406,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>1539 1953 592 584 1440 0 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1709 23 849 1394 0 0 2560 1417 </string>
+	<string>1283 23 1273 1394 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1319 -276 1273 1417 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_B219262B-5E85-416E-9082-A99B58F906B3</key>
@@ -2320,11 +2320,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-06T02:05:18Z</date>
+	<date>2019-01-10T19:42:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>
@@ -2342,7 +2342,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.5</string>
+	<string>3.2.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
