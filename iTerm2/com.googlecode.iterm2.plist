@@ -396,9 +396,9 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 109 796 486 0 0 2560 1417 </string>
+	<string>268 86 796 486 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1281 965 570 452 0 0 2560 1417 </string>
+	<string>401 500 665 527 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
