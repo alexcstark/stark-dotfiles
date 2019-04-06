@@ -4,6 +4,8 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PATH=$JAVA_HOME/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/stark/.oh-my-zsh"
+export TH="/Users/stark/airlab/treehouse"
+export ENV=development;
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -143,7 +145,32 @@ function reprof {
 }
 
 function gradlew {
-  ./gradlew;
+  $TH/gradlew $@;
+}
+
+function th {
+  cd ~/airlab/repos/treehouse;
+}
+
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  context
+  # git
+  dir
+)
+
+function update_sparse_checkout {
+  $TH/update_sparse_checkout;
 }
 
 
+
+
+# AIRLAB-DO-NOT-MODIFY section:ShellWrapper {{{
+# Airlab will only make edits inside these delimiters.
+
+# Source Airlab's shell integration, if it exists.
+if [ -e ~/.airlab/shellhelper.sh ]; then
+  source ~/.airlab/shellhelper.sh
+fi
+# AIRLAB-DO-NOT-MODIFY section:ShellWrapper }}}
