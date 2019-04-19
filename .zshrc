@@ -99,8 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # use vim as the visual editor
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # zmv allows us to do some cool rename things
 autoload -U zmv
@@ -125,7 +125,7 @@ function cd {
 }
 
 function gplom {
-  git pull origin master --rebase;
+  git pull origin master --rebase --autostash;
 }
 
 function gc {
@@ -137,7 +137,7 @@ function gs {
 }
 
 function prof {
-    vim ~/.zshrc;
+  vim ~/.zshrc;
 }
 
 function reprof {
@@ -155,8 +155,8 @@ function th {
 BULLETTRAIN_PROMPT_ORDER=(
   time
   context
-  # git
   dir
+  git
 )
 
 function update_sparse_checkout {
@@ -174,3 +174,23 @@ if [ -e ~/.airlab/shellhelper.sh ]; then
   source ~/.airlab/shellhelper.sh
 fi
 # AIRLAB-DO-NOT-MODIFY section:ShellWrapper }}}
+
+alias awk1="awk '{print \$1}'"
+alias awk2="awk '{print \$2}'"
+alias awk3="awk '{print \$3}'"
+alias awklast="rev | awk1 | rev"
+
+alias .=”cd ..”      # if you’re not using “.” for sourcing bash
+alias ..=”cd …/..”
+
+alias c=clear
+
+
+function sparse_update {
+  ./scripts/expand_sparse_checkout;
+  ./update_sparse_checkout;
+}
+
+function presto {
+  ssh -t alex_stark@gw1.silver.musta.ch 'presto';
+}
