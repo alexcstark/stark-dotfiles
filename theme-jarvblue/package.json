@@ -3,7 +3,7 @@
     "displayName": "JarvBlue",
     "description": "",
     "version": "0.0.1",
-    "publisher": "Alex",
+    "publisher": "starkk",
     "engines": {
         "vscode": "^1.5.0"
     },
