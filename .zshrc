@@ -7,6 +7,16 @@ export ZSH="/Users/stark/.oh-my-zsh"
 export TH="/Users/stark/airlab/treehouse"
 export ENV=development;
 
+export CDPATH=.\
+:${HOME}\
+:${HOME}/airlab\
+:${HOME}/airlab/repos\
+:${HOME}/airlab/repos/treehouse\
+:${HOME}/airlab/repos/treehouse/projects\
+:${HOME}/airlab/repos/treehouse/projects/tns\
+:${HOME}/airlab/repos/treehouse/projects/tns/kyoo\
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -180,8 +190,7 @@ alias awk2="awk '{print \$2}'"
 alias awk3="awk '{print \$3}'"
 alias awklast="rev | awk1 | rev"
 
-alias .=”cd ..”      # if you’re not using “.” for sourcing bash
-alias ..=”cd …/..”
+alias ..="cd .."      # if you’re not using “.” for sourcing bash
 
 alias c=clear
 
@@ -194,3 +203,8 @@ function sparse_update {
 function presto {
   ssh -t alex_stark@gw1.silver.musta.ch 'presto';
 }
+
+function ppjson {
+  echo $@ | python -m json.tool;
+}
+
