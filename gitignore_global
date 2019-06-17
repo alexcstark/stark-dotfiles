@@ -1,0 +1,4 @@
+.DS_Store
+# SBT likes to generate these...
+project/
+target/
