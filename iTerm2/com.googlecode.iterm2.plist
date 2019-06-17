@@ -405,10 +405,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>2970 93 620 392 2560 -979 1440 2537 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>2658 -330 918 514 2560 -400 1440 2537 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>403 0 1266 1027 0 0 1680 1027 </string>
+	<string>1283 0 1273 1417 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1372,17 +1374,17 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-18T18:57:23Z</date>
+	<date>2019-06-05T19:40:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.8</string>
+	<string>3.2.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
