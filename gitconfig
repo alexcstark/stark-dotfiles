@@ -1,0 +1,31 @@
+[push]
+	default = current
+[rerere]
+	enabled = true
+[core]
+	precomposeunicode = true
+	excludesfile = /Users/stark/.gitignore_global
+	sparseCheckout = true
+[user]
+	email = alex.stark@airbnb.com
+	name = Alex Stark
+[alias]
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    d = !git diff --name-status master@{u}...HEAD | gitrelpath ${GIT_PREFIX:-./}
+    dd = diff master@{u}...HEAD
+    tip = rev-parse HEAD
+    branchlog = git log HEAD --not master --no-merges
+[pager]
+  branch = false
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  "
+[url "git@git.musta.ch:airbnb/"]
+	insteadOf = https://git.musta.ch/airbnb/
