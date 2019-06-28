@@ -1,14 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PATH=$JAVA_HOME/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/stark/.oh-my-zsh"
-export TH="/Users/stark/airlab/treehouse"
+export TH="/Users/stark/airlab/repos/treehouse"
 export ENV=development;
 
 export CDPATH=.\
 :${HOME}\
+:${HOME}/airbnb-repos\
 :${HOME}/airlab\
 :${HOME}/airlab/repos\
 :${HOME}/airlab/repos/treehouse\
@@ -16,6 +17,7 @@ export CDPATH=.\
 :${HOME}/airlab/repos/treehouse/projects/tns\
 :${HOME}/airlab/repos/treehouse/projects/tns/kyoo\
 
+eval "$(rbenv init -)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -134,8 +136,32 @@ function cd {
  ls -a;
 }
 
-function gplom {
+function splom {
   git pull origin master --rebase --autostash;
+}
+
+function gplom {
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+  if [[ "$BRANCH" == "master" ]]; then
+    git pull origin master --rebase;
+    return
+  fi
+
+  GS_OUTPUT=$(git status --porcelain)
+  if [[ -n "$GS_OUTPUT" ]]; then
+    echo "stashing detected changes"
+    git stash;
+  fi
+
+  git checkout master;
+  git pull origin master --rebase --autostash;
+  git checkout -;
+  git rebase master;
+
+  if [[ -n "$GS_OUTPUT" ]]; then
+    git stash pop;
+  fi
 }
 
 function gc {
@@ -154,26 +180,12 @@ function reprof {
  source ~/.zshrc;
 }
 
-function gradlew {
-  $TH/gradlew $@;
-}
-
-function th {
-  cd ~/airlab/repos/treehouse;
-}
-
 BULLETTRAIN_PROMPT_ORDER=(
   time
   context
   dir
   git
 )
-
-function update_sparse_checkout {
-  $TH/update_sparse_checkout;
-}
-
-
 
 
 # AIRLAB-DO-NOT-MODIFY section:ShellWrapper {{{
@@ -195,16 +207,8 @@ alias ..="cd .."      # if you’re not using “.” for sourcing bash
 alias c=clear
 
 
-function sparse_update {
-  ./scripts/expand_sparse_checkout;
-  ./update_sparse_checkout;
-}
+source stark-scripts/airbnb_commands.zsh
 
-function presto {
-  ssh -t alex_stark@gw1.silver.musta.ch 'presto';
-}
 
-function ppjson {
-  echo $@ | python -m json.tool;
-}
+export PATH=$PATH:$(go env GOPATH)/bin
 
