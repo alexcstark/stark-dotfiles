@@ -1,0 +1,34 @@
+{
+  "load_extensions": {
+    "js/checkpoint": true,
+    "js/clone_nb": true,
+    "jupyter-js-widgets/extension": true
+  },
+  "keys": {
+    "command": {
+      "unbind": [
+        "o",
+        "shift-o",
+        "ctrl-enter",
+        "enter",
+        "i,i",
+        "y",
+        "c",
+        "x",
+        "d,d",
+        "z"
+      ],
+      "bind": {
+        "shift-o": "jupyter-notebook:insert-cell-above",
+        "o": "jupyter-notebook:insert-cell-below",
+        "cmd-enter": "jupyter-notebook:run-cell",
+        "ctrl-c": "jupyter-notebook:interrupt-kernel",
+        "i": "jupyter-notebook:enter-edit-mode",
+        "cmd-i": "jupyter-notebook:run-cell",
+        "y": "jupyter-notebook:copy-cell",
+        "d,d": "jupyter-notebook:cut-cell",
+        "u": "jupyter-notebook:undo-cell-deletion"
+      }
+    }
+  }
+}
