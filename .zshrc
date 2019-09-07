@@ -170,7 +170,7 @@ function gc {
 }
 
 function gs {
-  git status;
+  git status $@;
 }
 
 function prof {
@@ -179,6 +179,10 @@ function prof {
 
 function reprof {
  source ~/.zshrc;
+}
+
+function profa {
+  vim ~/stark-scripts/airbnb_commands.zsh;
 }
 
 BULLETTRAIN_PROMPT_ORDER=(
@@ -216,3 +220,8 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+eval "$(pyenv init -)"
+source $HOME/.poetry/env
+eval "$(pyenv virtualenv-init -)"
+
+export K2=yes
