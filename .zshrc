@@ -225,3 +225,8 @@ source $HOME/.poetry/env
 eval "$(pyenv virtualenv-init -)"
 
 export K2=yes
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
