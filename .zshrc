@@ -16,6 +16,7 @@ export CDPATH=.\
 :${HOME}/airlab/repos/treehouse/projects\
 :${HOME}/airlab/repos/treehouse/projects/tns\
 :${HOME}/airlab/repos/treehouse/projects/tns/kyoo\
+:${HOME}/airlab/repos/ml_models_container\
 
 eval "$(rbenv init -)"
 
@@ -182,7 +183,7 @@ function reprof {
 }
 
 function profa {
-  vim ~/stark-scripts/airbnb_commands.zsh;
+  vim ~/airlab/repos/stark-scripts/airbnb_commands.zsh;
 }
 
 BULLETTRAIN_PROMPT_ORDER=(
@@ -212,7 +213,7 @@ alias ..="cd .."      # if you’re not using “.” for sourcing bash
 alias c=clear
 
 
-source ~/stark-scripts/airbnb_commands.zsh
+source ~/airlab/repos/stark-scripts/airbnb_commands.zsh
 
 
 export PATH=$PATH:$(go env GOPATH)/bin
@@ -230,3 +231,38 @@ export K2=yes
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+source <(yak completion zsh)
+source ~/miniconda3/bin/activate
+
+
+export SSH_TUNNEL_USER=alex_stark
+
+function activate_kerl {
+        . ~/kerl/21.0/activate;
+}
+
+function spotlesspush {
+        spotless;
+        ga -A;
+        gc -m "spotless";
+        gp;
+}
+
+# elixir env activate
+. ~/kerl/21.0/activate
+
+export CLASSPATH=$CLASSPATH:bsh-2.0b6.jar:/Users/stark/airlab/repos/treehouse/projects/tns/meetspace/build/libs/meetspace-all.jar
+
+
+function gbb {
+    if [[ $# -gt 0 ]]
+    then
+        git branch $@
+    else
+        git branch --no-color | cat -n
+    fi
+}
+
+function gcoi {
+  git checkout $(gbb | egrep "^\s+$1\s+" | egrep -o '\S*$')
+}
