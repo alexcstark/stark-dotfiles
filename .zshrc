@@ -266,3 +266,7 @@ function gbb {
 function gcoi {
   git checkout $(gbb | egrep "^\s+$1\s+" | egrep -o '\S*$')
 }
+
+function gback {
+  git reset HEAD~1
+}
