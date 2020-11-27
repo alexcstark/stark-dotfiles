@@ -1,31 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/stark/.oh-my-zsh"
-export TH="/Users/stark/airlab/repos/treehouse"
-export ENV=development;
-
-export CDPATH=.\
-:${HOME}\
-:${HOME}/airbnb-repos\
-:${HOME}/airlab\
-:${HOME}/airlab/repos\
-:${HOME}/airlab/repos/treehouse\
-:${HOME}/airlab/repos/treehouse/projects\
-:${HOME}/airlab/repos/treehouse/projects/tns\
-:${HOME}/airlab/repos/treehouse/projects/tns/kyoo\
-:${HOME}/airlab/repos/ml_models_container\
-
-eval "$(rbenv init -)"
+export ZSH=$USER/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="bullet-train"
-ZSH_THEME=powerlevel10k/powerlevel10k
+ZSH_THEME="bullet-in"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -40,39 +23,8 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -84,33 +36,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # use vim as the visual editor
 export VISUAL=vim
@@ -138,10 +63,6 @@ function cd {
  ls -a;
 }
 
-function splom {
-  git pull origin master --rebase --autostash;
-}
-
 function gplom {
   BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
@@ -153,16 +74,16 @@ function gplom {
   GS_OUTPUT=$(git status --porcelain)
   if [[ -n "$GS_OUTPUT" ]]; then
     echo "stashing detected changes"
-    git stash;
+    git stash; 
   fi
-
+    
   git checkout master;
   git pull origin master --rebase --autostash;
   git checkout -;
   git rebase master;
 
   if [[ -n "$GS_OUTPUT" ]]; then
-    git stash pop;
+    git stash pop; 
   fi
 }
 
@@ -171,7 +92,7 @@ function gc {
 }
 
 function gs {
-  git status $@;
+  git status;
 }
 
 function prof {
@@ -182,26 +103,12 @@ function reprof {
  source ~/.zshrc;
 }
 
-function profa {
-  vim ~/airlab/repos/stark-scripts/airbnb_commands.zsh;
-}
-
 BULLETTRAIN_PROMPT_ORDER=(
   time
   context
   dir
   git
 )
-
-
-# AIRLAB-DO-NOT-MODIFY section:ShellWrapper {{{
-# Airlab will only make edits inside these delimiters.
-
-# Source Airlab's shell integration, if it exists.
-if [ -e ~/.airlab/shellhelper.sh ]; then
-  source ~/.airlab/shellhelper.sh
-fi
-# AIRLAB-DO-NOT-MODIFY section:ShellWrapper }}}
 
 alias awk1="awk '{print \$1}'"
 alias awk2="awk '{print \$2}'"
@@ -212,61 +119,6 @@ alias ..="cd .."      # if you’re not using “.” for sourcing bash
 
 alias c=clear
 
-
-source ~/airlab/repos/stark-scripts/airbnb_commands.zsh
-
-
-export PATH=$PATH:$(go env GOPATH)/bin
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-eval "$(pyenv init -)"
-source $HOME/.poetry/env
-eval "$(pyenv virtualenv-init -)"
-
-export K2=yes
-[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
-
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source <(yak completion zsh)
-source ~/miniconda3/bin/activate
-
-
-export SSH_TUNNEL_USER=alex_stark
-
-function activate_kerl {
-        . ~/kerl/21.0/activate;
-}
-
-function spotlesspush {
-        spotless;
-        ga -A;
-        gc -m "spotless";
-        gp;
-}
-
-# elixir env activate
-. ~/kerl/21.0/activate
-
-export CLASSPATH=$CLASSPATH:bsh-2.0b6.jar:/Users/stark/airlab/repos/treehouse/projects/tns/meetspace/build/libs/meetspace-all.jar
-
-
-function gbb {
-    if [[ $# -gt 0 ]]
-    then
-        git branch $@
-    else
-        git branch --no-color | cat -n
-    fi
-}
-
-function gcoi {
-  git checkout $(gbb | egrep "^\s+$1\s+" | egrep -o '\S*$')
-}
-
-function gback {
-  git reset HEAD~1
+function ppjson {
+  echo $@ | python -m json.tool;
 }

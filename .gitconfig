@@ -7,7 +7,7 @@
 	excludesfile = /Users/stark/.gitignore_global
 	sparseCheckout = true
 [user]
-	email = alex.stark@airbnb.com
+	email = alexcstark@gmail.com
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     d = !git diff --name-status master@{u}...HEAD | gitrelpath ${GIT_PREFIX:-./}
