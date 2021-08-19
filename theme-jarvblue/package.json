@@ -1,22 +1,32 @@
 {
-    "name": "theme-jarvblue",
-    "displayName": "JarvBlue",
-    "description": "",
-    "version": "0.0.1",
-    "publisher": "starkk",
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "contributes": {
-        "themes": [
-            {
-                "label": "JarvBlue",
-                "uiTheme": "vs-dark",
-                "path": "./themes/JarvBlue (5).tmTheme"
-            }
-        ]
-    }
+	"name": "theme-jarvblue",
+	"displayName": "JarvBlue",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "starkk",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "JarvBlue",
+				"uiTheme": "vs-dark",
+				"path": "./themes/JarvBlue (5).tmTheme"
+			},
+			{
+				"label": "j2",
+				"uiTheme": "vs-dark",
+				"path": "./themes/j2.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "aa3b6ea4-60b1-4b23-8dc3-929377a4ce4e",
+		"publisherDisplayName": "starkk",
+		"publisherId": "290fe4f8-d7ac-4582-828c-98e313ab170d"
+	}
 }
